@@ -1,5 +1,5 @@
 # Pour la partie Navigation
-- Utiliser le plug-in rqt_robot_steering 
+- Utiliser le package rqt_robot_steering 
 - Faire son propre noeud qui utilise le retour du lidar
 
 - Dans urdf, pour l'odométrie : dans diff_drive.so mettre publish_odom à true
