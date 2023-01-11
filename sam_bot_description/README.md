@@ -18,7 +18,9 @@ ros2 launch nav2_bringup navigation_launch.py params_file:=/home/nathan/ros2_ws/
 # for foxy : https://github.com/ros-planning/navigation2/blob/foxy-devel/nav2_bringup/bringup/params/nav2_params.yaml#L61-L82
 # In RVIZ : set frame to map to see footprint
 ```
+### Navigation
+Utiliser le plug-in rqt_robot_steering 
+Faire son propre noeud
 
-```bash
-#Navigation
-```
+Dans urdf, pour l'odométrie : dans diff_drive.so mettre publish_odom à true
+(evite de lancer le ekf)
