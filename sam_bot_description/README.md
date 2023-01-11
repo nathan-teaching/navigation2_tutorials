@@ -5,6 +5,10 @@
 - Dans l'urdf, pour l'odométrie : dans les paramètres du plugin diff_drive_controller.so mettre publish_odom_tf à true
 (et ne plus lancer le noeuds ekf)
 
+- sur moodle : https://moodle.ensta-bretagne.fr/course/view.php?id=1415 : recupérer le package enstabot track de foxy plus voir les consignes dans le TP associé :
+  - Faire spawn son robot dans le circuit
+  - S'échapper du labyrinthe   
+
 Pour gérer les coefficient de frottements (ici pour ajouter du frottement):
 ```xml
 <gazebo reference=[votre roue]>
