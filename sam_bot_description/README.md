@@ -19,8 +19,8 @@ ros2 launch nav2_bringup navigation_launch.py params_file:=/home/nathan/ros2_ws/
 # In RVIZ : set frame to map to see footprint
 ```
 ### Navigation
-Utiliser le plug-in rqt_robot_steering 
-Faire son propre noeud
+- Utiliser le plug-in rqt_robot_steering 
+- Faire son propre noeud qui utilise le retour du lidar
 
-Dans urdf, pour l'odométrie : dans diff_drive.so mettre publish_odom à true
-(evite de lancer le ekf)
+- Dans urdf, pour l'odométrie : dans diff_drive.so mettre publish_odom à true
+(et ne plus lancer le noeuds ekf)
