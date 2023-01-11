@@ -1,8 +1,8 @@
 # Pour la partie Navigation
-- Utiliser le package rqt_robot_steering 
+- Utiliser le package rqt_robot_steering faire en sorte que le pakage envoie les commandes sur le bon topic. Le Robot doit se déplacer dasn Gazebo et RVIZ
 - Faire son propre noeud qui utilise le retour du lidar
 
-- Dans urdf, pour l'odométrie : dans diff_drive.so mettre publish_odom à true
+- Dans l'urdf, pour l'odométrie : dans les paramètres du plugin diff_drive_controller.so mettre publish_odom_tf à true
 (et ne plus lancer le noeuds ekf)
 
 # Nav2 URDF Setup Tutorial - Differential Drive Robot
