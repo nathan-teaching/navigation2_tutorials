@@ -7,7 +7,7 @@
 
 Pour gérer les coefficient de frottements:
 ```xml
-<gazebo link=[votre roue]>
+<gazebo reference=[votre roue]>
   <mu1>1.2</mu1>
   <mu2>1.2</mu2>
   <kp>500000.0</kp>
