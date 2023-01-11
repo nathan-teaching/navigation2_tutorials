@@ -2,3 +2,23 @@
 Tutorial code referenced in https://navigation.ros.org/setup_guides/urdf/setup_urdf.html
 
 This package implements a URDF description for a simple differential drive robot. It includes the complete urdf files, launch files, build files and rviz configuration to replicate the tutorial in the link above
+
+```bash
+# Map and Costmap
+ros2 launch slam_toolbox online_async_launch.py
+ros2 launch nav2_bringup navigation_launch.py
+ros2 run nav2_costmap_2d nav2_costmap_2d_markers voxel_grid:=/local_costmap/voxel_grid visualization_marker:=/my_marker
+
+```
+
+```bash
+# Footprint
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map odom
+ros2 launch nav2_bringup navigation_launch.py params_file:=/home/nathan/ros2_ws/src/navigation2_tutorials/sam_bot_description/config/nav2_params.yaml
+# for foxy : https://github.com/ros-planning/navigation2/blob/foxy-devel/nav2_bringup/bringup/params/nav2_params.yaml#L61-L82
+# In RVIZ : set frame to map to see footprint
+```
+
+```bash
+#Navigation
+```

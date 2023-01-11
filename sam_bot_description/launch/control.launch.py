@@ -21,7 +21,7 @@ def generate_launch_description():
         condition=launch.conditions.UnlessCondition(LaunchConfiguration('gui')),
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
-
+    
     rviz_node = launch_ros.actions.Node(
         package='rviz2',
         executable='rviz2',
@@ -35,14 +35,13 @@ def generate_launch_description():
         arguments=['-entity', 'sam_bot', '-topic', 'robot_description'],
         output='screen'
     )
-    robot_localization_node = launch_ros.actions.Node(
-         package='robot_localization',
-         executable='ekf_node',
-         name='ekf_filter_node',
-         output='screen',
-         parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': LaunchConfiguration('use_sim_time')}]
-    )
 
+    rqt_robot_steering_node = launch_ros.actions.Node(
+        package='rqt_robot_steering',
+        executable='rqt_robot_steering',
+        name='robot_steering_cmd',
+        output='screen',
+        remappings=[("/cmd_vel", "/demo/cmd_vel")])
 
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='gui', default_value='True',
@@ -57,6 +56,6 @@ def generate_launch_description():
         joint_state_publisher_node,
         robot_state_publisher_node,
         spawn_entity,
-        robot_localization_node,
+        rqt_robot_steering_node,
         rviz_node
     ])
