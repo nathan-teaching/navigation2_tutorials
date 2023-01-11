@@ -5,6 +5,18 @@
 - Dans l'urdf, pour l'odométrie : dans les paramètres du plugin diff_drive_controller.so mettre publish_odom_tf à true
 (et ne plus lancer le noeuds ekf)
 
+Pour gérer les coefficient de frottements:
+```xml
+<gazebo link=[votre roue]>
+  <mu1>1.2</mu1>
+  <mu2>1.2</mu2>
+  <kp>500000.0</kp>
+  <kd>10.0</kd>
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
+  <material>Gazebo/FlatBlack</material>
+</gazebo>
+```
 # Nav2 URDF Setup Tutorial - Differential Drive Robot
 
 Tutorial code referenced in https://navigation.ros.org/setup_guides/urdf/setup_urdf.html
