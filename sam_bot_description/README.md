@@ -5,7 +5,7 @@
 - Dans l'urdf, pour l'odométrie : dans les paramètres du plugin diff_drive_controller.so mettre publish_odom_tf à true
 (et ne plus lancer le noeuds ekf)
 
-Pour gérer les coefficient de frottements:
+Pour gérer les coefficient de frottements (ici pour ajouter du frottement):
 ```xml
 <gazebo reference=[votre roue]>
   <mu1>1.2</mu1>
